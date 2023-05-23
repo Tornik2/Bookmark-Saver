@@ -6,11 +6,15 @@ html, * {
 body {
   margin: 0;
   min-height: 100vh;
-}
+  background-color: rgb(109, 146, 146);
+  font-family: 'Montserrat',sans-serif;
+} 
 
 .container {
   display: grid;
-  padding: 1em;
+  padding: 2em;
+  gap: 1.5em;
+  
 }
 
 a {
@@ -18,10 +22,14 @@ a {
   font-size: 1.2rem;
   font-weight: 600;
   display: inline-block;
-  padding: 0.7em 1.14em;
-  background-color: rgb(97, 43, 43);
+  padding: 1.2em 1.5em ;
   color: rgb(255, 252, 252);
   border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+a:hover {
+  background-color: rgb(111, 126, 76);
 }
 
 .bookmarks {
@@ -30,16 +38,21 @@ a {
   gap: 2em;
 }
 
+
+
 .add-btn {
   justify-self: center;
   font-size: 1.5rem;
   padding: 0.7em 1.9em;
   border: none;
   border-radius: 10px;
-  background-color: rgb(95, 199, 95);
+  background-color: rgb(153, 235, 153);
   margin-bottom: 0.5em;
   cursor: pointer;
   outline: none;
+  color:rgb(81, 97, 43);
+  font-weight:600;
+  font-family: 'Inter', sans-serif;
 }
 
 .add-btn:hover {
@@ -47,7 +60,7 @@ a {
 }
 
 .modal {
-  padding: 1em;
+  padding: 2em;
   width: 60%;
   max-width: 450px;
   height: min-content;
@@ -59,8 +72,12 @@ a {
   margin: auto;
   display: flex;
   flex-direction: column;
+  font-size: 1.2em;
+  gap: 0.3em;
   background-color: rgb(106, 192, 192);
   border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+  position: relative;
 }
 .modal-container {
   position: fixed;
@@ -68,17 +85,63 @@ a {
   top: 0;
   width: 100vw;
   height: 100vh;
-  border: 1px solid black;
-  display: block;
+  display: none;
 }
 input {
   padding: 0.5em;
   outline: none;
   margin-bottom: 1em;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2em;
 }
 
 #close-modal {
-  
   align-self: flex-end;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
 }
 
+i:hover {
+  opacity: 0.6;
+}
+
+
+.modal-button {
+  font-size: large;
+  padding: 1em;
+  border: none;
+  border-radius: 10px;
+  background-color:rgb(5, 32, 32);
+  color: white;
+  cursor: pointer;
+  font-family: 'Montserrat',sans-serif;;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+button:active {
+  transform: translateY(0.1em);
+}
+
+.added-bookmark {
+  position: relative; 
+  background-color: rgb(77, 94, 37);
+  border-radius: 10px;
+}
+.delete-btn {
+  position: absolute;
+  right: 0.4em;
+  top: 0.3em;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .added-bookmark {
+      flex-grow: 1;
+    }
+}
